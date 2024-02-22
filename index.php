@@ -12,7 +12,7 @@ if (!empty($_POST['submit'])) {
     if (empty($_POST['name'])) {
         array_push($errors, "Name cannot be empty");
     } elseif (strlen($name) > MAX_NAME_LENGTH) {
-        array_push($errors, "Name is too long, must be less than 100 characters");
+        array_push($errors, "Name is too long, must be less than ".MAX_NAME_LENGTH." characters");
     }
     if (empty($_POST['email'])) {
         array_push($errors, "Email cannot be empty");
@@ -22,7 +22,7 @@ if (!empty($_POST['submit'])) {
     if (empty($_POST['message'])) {
         array_push($errors, "Message cannot be empty");
     } elseif (strlen($message) > MAX_MESSAGE_LENGTH) {
-        array_push($errors, "Message is too long, must be less than 255 characters");
+        array_push($errors, "Message is too long, must be less than ".MAX_MESSAGE_LENGTH." characters");
     }
 }
 
@@ -110,6 +110,7 @@ if (!empty($_POST['submit'])) {
             </div>
             <div class="col-12 ">
                 <button type="submit" class="btn btn-primary" name="submit" value="submit">Submit</button>
+                <button type="reset" class="btn btn-danger" name="reset" value="reset">Reset</button>
             </div>
         </form>
     </div>
